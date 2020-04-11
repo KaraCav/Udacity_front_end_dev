@@ -23,4 +23,12 @@ app.use(cors());
 const port = 8080;
 const server = app.listen(port, listening);
 function listening() {
-   console.log(`Listening on port ${port}`}; }
+   console.log(`Listening on port ${port}`}; 
+}
+
+// Express provides methods that define routing and correspond directly to HTTP methods
+   app.get("/", function(req,res) { res.send("hello") });
+   
+               
+               
+               
