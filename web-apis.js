@@ -30,5 +30,20 @@ function listening() {
    app.get("/", function(req,res) { res.send("hello") });
    
                
-               
-               
+// Accepting a POST request as the backend server
+const data = [{animal:"elephant", score: 10},{animal:"kangaroo",score:3}] // what we add entry to
+function makeData(request){
+   let incomingData = request.body; // assign the incoming post request info to a variable
+   let newAnimal = {                // assign that variable's properties to your own formatted variable
+      animal: incomingData.animal,
+      score: incomingData.score
+   }
+   data.push(newAnimal);         // push the formatted variable to your database array
+}
+makeData({body:{animal:"turtle", score:7}})
+
+// Add the data directly client-side
+   projectData = [];
+   app.post('/add', function(request, response){
+      projectData.push(request.body);
+   }) 
