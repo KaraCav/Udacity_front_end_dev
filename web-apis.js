@@ -77,3 +77,12 @@ makeData({body:{animal:"turtle", score:7}})
          console.log(err);
       }
    }
+
+   // Steps to remember
+   // Registering for developer credentials on the Web API’s website.
+   // Creating variables to hold the base url and api key for the Web API.
+   // Building a dynamic URL to make a query to the Web API.
+   // Using Fetch in an async function to make a GET request to the Web API
+   
+// CREATE a dynamic URL: base url www.api.com/data?, var for user input 'userInfo', and your API key is '123key'.
+   'www.api.com/data?='+userInfo+123key
