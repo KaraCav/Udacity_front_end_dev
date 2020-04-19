@@ -47,3 +47,33 @@ makeData({body:{animal:"turtle", score:7}})
    app.post('/add', function(request, response){
       projectData.push(request.body);
    }) 
+
+// Client-side Post Request
+   const postData = async ( url = '', data = {})=>{
+    const response = await fetch(url, {
+    method: 'POST', 
+    credentials: 'same-origin', 
+    headers: {
+        'Content-Type': 'application/json', // if json here then json in body also
+    },
+    body: JSON.stringify(data),       
+  });
+
+    try {
+      const newData = await response.json();
+      return newData
+    }catch(error) {
+    console.log("error", error);
+    }
+}
+   
+// Client-side GET request
+   const getData = async(url= '') => {
+      const request = await fetch(url);
+      try {
+         const allData = await request.json();
+      }
+      catch(err) {
+         console.log(err);
+      }
+   }
